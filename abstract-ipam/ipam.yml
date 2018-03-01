@@ -12,6 +12,7 @@ imports:
 
 node_types:
   org.alien4cloud.nodes.AbstractIPAM:
+    abstract: true
     derived_from: tosca.nodes.SoftwareComponent
     description: IPAM APP install
     capabilities:
