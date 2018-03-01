@@ -1,0 +1,40 @@
+tosca_definitions_version: alien_dsl_1_4_0
+
+metadata:
+  template_name: dummy-ipam-type
+  template_version: 1.4.0-SNAPSHOT
+  template_author: gkatsaros
+
+description: Starting a simple http server as a dummy ipam
+
+imports:
+  - tosca-normative-types:1.0.0-ALIEN14
+
+node_types:
+  org.alien4cloud.nodes.IPAM:
+    derived_from: tosca.nodes.SoftwareComponent
+    description: IPAM APP install
+    capabilities:
+      ipamEndpoint:
+        type: org.alien4cloud.capabilities.IPAMModule
+    requirements:
+      - host: # Overrides the parent host requirement to add a specific node_filter and add OS constraints as Impl is based on apt and so restricted to debian.
+          capability: tosca.capabilities.Container
+          node: tosca.nodes.Compute
+          relationship: tosca.relationships.HostedOn
+          occurrences: [1, 1]
+          node_filter:
+            capabilities:
+              - tosca.capabilities.OperatingSystem:
+                  properties:
+                    - type: { equal: linux }
+                    - architecture: { equal: x86_64 }
+                    - distribution: { valid_values: [ debian, ubuntu, knoppix ] }
+    interfaces:
+      Standard:
+        create: scripts/install_ipam_server.sh
+
+capability_types:
+  org.alien4cloud.capabilities.IPAMModule:
+    derived_from: tosca.capabilities.Root
+    description: Provide IPAM services
