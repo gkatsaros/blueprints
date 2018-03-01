@@ -36,5 +36,5 @@ node_types:
 
 capability_types:
   org.alien4cloud.capabilities.IPAMModule:
-    derived_from: tosca.capabilities.Root
+    derived_from: tosca.capabilities.Endpoint
     description: Provide IPAM services
