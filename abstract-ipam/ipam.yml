@@ -16,9 +16,9 @@ node_types:
     description: IPAM APP install
     capabilities:
       ipamEndpoint:
-        type: org.alien4cloud.capabilities.IPAMModule
+        type: org.alien4cloud.capabilities.AbstractIPAMModule
 
 capability_types:
-  org.alien4cloud.capabilities.IPAMModule:
+  org.alien4cloud.capabilities.AbstractIPAMModule:
     derived_from: tosca.capabilities.Root
     description: Provide IPAM services
