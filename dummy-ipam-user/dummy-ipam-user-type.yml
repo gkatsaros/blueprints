@@ -11,10 +11,6 @@ imports:
   - tosca-normative-types:1.0.0-ALIEN14
   - abstract-ipam-type:1.4.0-SNAPSHOT
 
-inputs:
-  user:
-    type: string
-    description: Simple string typed property definition with no constraints.
 
 node_types:
   org.alien4cloud.nodes.IPAMUser:
@@ -37,7 +33,7 @@ node_types:
                     - architecture: { equal: x86_64 }
                     - distribution: { valid_values: [ debian, ubuntu, knoppix ] }
       - ipam:
-          capability: org.alien4cloud.capabilities.IPAMModule
+          capability: org.alien4cloud.capabilities.IPAMEndpoint
           relationship: org.alien4cloud.relationships.IPAMUSerConnectIPAM
           occurrences: [1, 1]
     interfaces:
@@ -48,7 +44,7 @@ relationship_types:
   org.alien4cloud.relationships.IPAMUSerConnectIPAM:
     derived_from: tosca.relationships.ConnectsTo
     description: Relationship use to connect the IPAM User with an IPAM system
-    valid_target_types: [ org.alien4cloud.capabilities.IPAMModule ]
+    valid_target_types: [ org.alien4cloud.capabilities.IPAMEndpoint ]
     interfaces:
       Configure:
           pre_configure_source:

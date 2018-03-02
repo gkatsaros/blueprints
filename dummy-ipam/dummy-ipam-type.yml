@@ -17,7 +17,7 @@ node_types:
     description: IPAM APP install
     capabilities:
       ipamEndpoint:
-        type: org.alien4cloud.capabilities.IPAMModule
+        type: org.alien4cloud.capabilities.IPAMEndpoint
     requirements:
       - host: # Overrides the parent host requirement to add a specific node_filter and add OS constraints as Impl is based on apt and so restricted to debian.
           capability: tosca.capabilities.Container
