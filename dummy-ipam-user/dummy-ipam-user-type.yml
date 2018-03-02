@@ -54,6 +54,6 @@ relationship_types:
           pre_configure_source:
             inputs:
               IPAM_IP: { get_attribute: [TARGET, ip_address] }
-              USER_NAME: { get_property: [SELF, username] }
+              USER_NAME: { get_property: [SOURCE, username] }
             implementation: scripts/config_ipamuser_for_ipam.sh
 
