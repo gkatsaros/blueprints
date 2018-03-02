@@ -30,8 +30,8 @@ node_types:
                     - type: { equal: linux }
                     - architecture: { equal: x86_64 }
                     - distribution: { valid_values: [ debian, ubuntu, knoppix ] }
-      - database:
-          capability: org.alien4cloud.capabilities.IPAMModule
+      - ipam:
+          capability: org.alien4cloud.capabilities.IPAMUserModule
           relationship: org.alien4cloud.relationships.IPAMUSerConnectIPAM
           occurrences: [1, 1]
     interfaces:
