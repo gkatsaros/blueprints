@@ -9,6 +9,7 @@ description: Starting a simple http server as a dummy ipam
 
 imports:
   - tosca-normative-types:1.0.0-ALIEN14
+  - abstract-ipam-type:1.4.0-SNAPSHOT
 
 node_types:
   org.alien4cloud.nodes.IPAM:
@@ -33,8 +34,3 @@ node_types:
     interfaces:
       Standard:
         create: scripts/install_ipam_server.sh
-
-capability_types:
-  org.alien4cloud.capabilities.IPAMModule:
-    derived_from: tosca.capabilities.Endpoint
-    description: Provide IPAM services
