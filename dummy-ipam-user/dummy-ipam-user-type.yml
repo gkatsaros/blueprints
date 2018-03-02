@@ -11,7 +11,7 @@ imports:
   - tosca-normative-types:1.0.0-ALIEN14
 
 node_types:
-  org.alien4cloud.nodes.IPAM:
+  org.alien4cloud.nodes.IPAMUser:
     derived_from: tosca.nodes.SoftwareComponent
     description: IPAM User APP install
     capabilities:
