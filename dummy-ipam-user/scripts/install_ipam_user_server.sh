@@ -28,6 +28,5 @@ echo "install Dummy Ipam server..."
 
 git clone https://github.com/gkatsaros/scripts.git
 
-ip=`cat /opt/ipam_ip`
 
-python scripts/dummy-ipam-user/ipam-user-server.py -ip $ip &> /dev/null &
+python scripts/dummy-ipam-user/ipam-user-server.py &> /dev/null &
