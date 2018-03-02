@@ -11,6 +11,7 @@ imports:
   - tosca-normative-types:1.0.0-ALIEN14
   - abstract-ipam-type:1.4.0-SNAPSHOT
 
+
 node_types:
   org.alien4cloud.nodes.IPAM:
     derived_from: tosca.nodes.SoftwareComponent
