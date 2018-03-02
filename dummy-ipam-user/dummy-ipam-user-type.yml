@@ -11,6 +11,10 @@ imports:
   - tosca-normative-types:1.0.0-ALIEN14
   - dummy-ipam-type:1.4.0-SNAPSHOT
 
+inputs:
+    username:
+    type: string
+
 node_types:
   org.alien4cloud.nodes.IPAMUser:
     derived_from: tosca.nodes.SoftwareComponent
